@@ -24,9 +24,7 @@ app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 6000;
 
-const server = http.createServer(app);
-
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}..`);
   ConnnectDB();
 });

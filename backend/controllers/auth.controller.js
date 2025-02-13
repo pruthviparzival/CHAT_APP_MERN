@@ -42,7 +42,7 @@ export const signup = async (req, res) => {
         profilePic: newUser.profilePic,
       });
     } else {
-      res.status(400).json({ error: "Invaild user data" });
+      return res.status(400).json({ error: "Invaild user data" });
     }
   } catch (error) {
     console.log("Error in signup controller - ", error.message);
@@ -60,7 +60,7 @@ export const login = async (req, res) => {
       existingUser?.password || "" // if null then compare empty string to not get any error
     );
     if (!existingUser || !isPasswordCorrect) {
-      return res.status(400).json("error: Invaild username or password");
+      return res.status(400).json({ error: "Invaild username or password" });
     }
 
     // cookies thing.
