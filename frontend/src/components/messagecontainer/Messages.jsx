@@ -5,7 +5,7 @@ import Message from "./Message";
 
 const Messages = () => {
   const { messages, loading } = useGetMessages();
-  console.log("messages: ", messages);
+  //useListenMessages();
   const lastMessageRef = useRef();
 
   useEffect(() => {

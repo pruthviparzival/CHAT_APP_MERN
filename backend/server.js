@@ -1,13 +1,12 @@
 import "dotenv/config";
 import express from "express";
-import http from "http";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
-import ConnnectDB from "./db/db.connect.js";
+import ConnectDB from "./db/db.connect.js";
 
 const app = express();
 
@@ -26,5 +25,5 @@ const PORT = process.env.PORT || 6000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}..`);
-  ConnnectDB();
+  ConnectDB();
 });
