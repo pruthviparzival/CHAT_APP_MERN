@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      var socket = io("http://localhost:7000", {
+      var socket = io("https://swiftchat-stsh.onrender.com/", {
         withCredentials: true, // Important to send cookies/auth headers
         query: {
           userId: authUser._id,
