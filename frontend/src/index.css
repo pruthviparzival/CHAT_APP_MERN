@@ -11,19 +11,28 @@ body {
   background-attachment: fixed;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+* {
+  --sb-track-color: #0a1419;
+  --sb-thumb-color: #d4d4d4;
+  --sb-size: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #555;
+*::-webkit-scrollbar {
+  width: var(--sb-size);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #121212;
-  border-radius: 5px;
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #242424;
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
